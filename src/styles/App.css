@@ -1,0 +1,90 @@
+:root {
+  --background-color: #ffffff;
+  --text-color: #000000;
+}
+
+body.dark-mode {
+  --background-color: #000000;
+  --text-color: #ffffff;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+}
+/* Cài đặt màu sắc nền và chữ tổng thể */
+:root {
+  --background-color: #ffffff; /* Nền mặc định (sáng) */
+  --text-color: #000000; /* Chữ mặc định */
+  --secondary-bg-color: #f7f7f7; /* Nền khối chính sáng hơn */
+  --navbar-bg-color: #ffffff; /* Nền thanh điều hướng */
+}
+
+/* Chế độ tối */
+body.dark-mode {
+  --background-color: #1e1e1e; /* Nền tổng thể tối */
+  --text-color: #e4e4e4; /* Chữ sáng hơn */
+  --secondary-bg-color: #2c2c2c; /* Nền khối chính (xám trung tính) */
+  --navbar-bg-color: #2f2f2f; /* Thanh điều hướng tối vừa */
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+/* Khối chính: Nền sáng hơn nền tổng thể */
+.main-content {
+  background-color: var(--secondary-bg-color);
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  margin: 1rem;
+}
+
+/* Thanh điều hướng */
+.navbar {
+  background-color: var(--navbar-bg-color);
+  padding: 0.5rem 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.main-content {
+  margin: 2rem auto;
+  max-width: 960px; /* Cố định chiều rộng nội dung */
+  background-color: var(--secondary-bg-color);
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.1); /* Hiệu ứng nổi nhẹ */
+}
+/* Khối nội dung chính */
+.main-content {
+  margin: 2rem auto;
+  max-width: 960px;
+  background-color: var(--secondary-bg-color);
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Media Query cho màn hình nhỏ */
+@media (max-width: 768px) {
+  .main-content {
+    margin: 1rem;
+    padding: 1rem;
+    max-width: 100%;
+  }
+}

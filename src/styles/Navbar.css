@@ -1,0 +1,104 @@
+/* General styles */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  background-color: var(--navbar-bg-color);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+/* Logo styles */
+.nav-logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: var(--text-color);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.nav-logo:hover {
+  color: var(--primary-color);
+}
+
+/* Nav items with icons */
+.nav-item {
+
+  align-items: center;
+  text-decoration: none;
+  color: var(--text-color);
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 0.5rem 0.75rem;
+  border-radius: 4px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.nav-icon {
+  margin-right: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.nav-item:hover {
+  background-color: var(--hover-bg-color);
+  color: var(--hover-text-color);
+}
+
+/* Adjust hover colors for light/dark mode */
+:root {
+  --hover-bg-color: rgba(255, 255, 255, 0.2); /* Default for dark mode */
+  --hover-text-color: #fff;
+}
+
+[data-theme="light"] {
+  --hover-bg-color: rgba(0, 0, 0, 0.1); /* Adjust for light mode */
+  --hover-text-color: #000;
+}
+
+/* Responsive Menu */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  color: var(--text-color);
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: var(--navbar-bg-color);
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 0;
+    transform: translateY(-100%);
+    opacity: 0;
+    visibility: hidden;
+    transition: transform 0.3s ease, opacity 0.3s ease, visibility 0.3s;
+  }
+
+  .nav-links.active {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+}
+/* Logo Image */
+.nav-logo-image {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+}

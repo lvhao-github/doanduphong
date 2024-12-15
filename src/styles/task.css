@@ -1,0 +1,189 @@
+/* Bộ lọc các nút (Filters) */
+.task-list .filters {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.task-list .filters button {
+  padding: 8px 16px;
+  border: 2px solid #4caf50; /* Màu xanh lá */
+  background-color: transparent;
+  color: #4caf50;
+  border-radius: 25px; /* Nút tròn hơn */
+  font-weight: 500;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.task-list .filters button:hover {
+  background-color: #4caf50; /* Màu nền xanh lá */
+  color: #fff; /* Chữ trắng */
+  transform: scale(1.05); /* Phóng lớn nhẹ khi hover */
+}
+
+.task-list .filters button.active {
+  background-color: #4caf50;
+  color: #fff;
+  font-weight: bold;
+  transform: scale(1.1); /* Nút lớn hơn khi được chọn */
+}
+
+/* Danh sách công việc (Tasks) */
+.task {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(145deg, #ffffff, #f0f0f0); /* Hiệu ứng gradient */
+  padding: 15px 20px;
+  margin-bottom: 15px;
+  border-radius: 10px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15), inset 0 0 10px rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease-in-out;
+}
+
+.task:hover {
+  transform: translateY(-3px); /* Nâng lên nhẹ khi hover */
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2), inset 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+/* Công việc hoàn thành */
+.task.completed {
+  text-decoration: line-through;
+  color: #9e9e9e;
+  background: linear-gradient(145deg, #e0e0e0, #f8f8f8); /* Màu nhạt hơn */
+}
+
+.task.completed:hover {
+  transform: none; /* Không nâng lên khi hover */
+  box-shadow: none;
+}
+
+/* Hành động (Actions) */
+.task .actions {
+  display: flex;
+  gap: 8px;
+}
+
+.task .actions button {
+  border: none;
+  background: none;
+  color: #4caf50;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.task .actions button:hover {
+  color: #388e3c; /* Màu xanh đậm hơn khi hover */
+}
+
+.task .actions button:active {
+  transform: scale(0.95); /* Thu nhỏ khi nhấn */
+}
+/* Nền và kiểu chung cho task */
+.task {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  margin: 0.5rem 0;
+  background-color: var(--secondary-bg-color);
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s;
+}
+
+.task.completed {
+  background-color: #d4edda; /* Màu xanh nhạt cho task hoàn thành */
+}
+
+/* Tên task */
+.task span {
+  flex: 1;
+  font-size: 1rem;
+  color: var(--text-color);
+  overflow-wrap: break-word;
+}
+
+/* Các hành động */
+.actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+/* Nút hành động */
+.actions button {
+  padding: 0.5rem 0.75rem;
+  font-size: 0.875rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  background-color: #007bff;
+  color: white;
+  transition: background-color 0.3s;
+}
+
+.actions button:hover {
+  background-color: #0056b3;
+}
+
+/* Media query cho màn hình nhỏ */
+@media (max-width: 768px) {
+  .task {
+    flex-direction: column; /* Hiển thị theo cột */
+    align-items: flex-start; /* Căn trái các thành phần */
+  }
+
+  .actions {
+    flex-wrap: wrap; /* Các nút sẽ tự xuống dòng khi cần */
+    margin-top: 0.5rem;
+  }
+
+  .actions button {
+    flex: 1 1 100%; /* Nút sẽ chiếm toàn bộ chiều rộng */
+    text-align: center;
+  }
+}
+.task:hover {
+  transform: scale(1.02);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+/* Các hành động (bố cục chính) */
+.actions {
+  display: flex; /* Hiển thị hàng ngang mặc định */
+  gap: 0.5rem; /* Khoảng cách giữa các nút */
+}
+
+/* Nút hành động */
+.actions button {
+  padding: 0.5rem 0.75rem;
+  font-size: 0.875rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  background-color: #007bff;
+  color: white;
+  transition: background-color 0.3s;
+}
+
+.actions button:hover {
+  background-color: #0056b3;
+}
+
+/* Bố cục Grid trên màn hình nhỏ */
+@media (max-width: 768px) {
+  .actions {
+    display: grid; /* Chuyển sang Grid Layout */
+    grid-template-columns: repeat(2, 1fr); /* 2 cột */
+    gap: 0.5rem; /* Khoảng cách giữa các nút */
+    width: 100%; /* Đảm bảo chiếm hết chiều rộng */
+  }
+
+  .actions button {
+    flex: 1; /* Nút tự co giãn đều */
+    text-align: center;
+  }
+}

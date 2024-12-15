@@ -1,0 +1,33 @@
+/* Footer chung */
+.footer {
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
+}
+
+/* Footer chế độ tối */
+.app.dark .footer {
+  background-color: #333;
+  color: #f8f9fa;
+}
+
+/* Footer chế độ sáng */
+.app.light .footer {
+  background-color: #f8f9fa;
+  color: #333;
+}
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: var(--navbar-bg-color);
+  color: var(--text-color);
+}
+
+/* Media Query cho màn hình nhỏ */
+@media (max-width: 768px) {
+  footer {
+    padding: 0.5rem;
+    font-size: 0.9rem;
+  }
+}

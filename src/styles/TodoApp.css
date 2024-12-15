@@ -1,0 +1,31 @@
+.todo-form {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .todo-form input {
+    flex: 1;
+    padding: 10px;
+    font-size: 16px;
+  }
+  
+  .todo-form button {
+    padding: 10px 20px;
+    font-size: 16px;
+  }
+  
+  @media (max-width: 768px) {
+    .todo-form {
+      flex-direction: column;
+      gap: 5px;
+    }
+  
+    .todo-form input,
+    .todo-form button {
+      font-size: 14px;
+      padding: 8px;
+    }
+  }
+  

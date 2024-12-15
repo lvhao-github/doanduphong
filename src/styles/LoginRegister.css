@@ -1,0 +1,162 @@
+/* Tổng quan toàn bộ trang */
+.login-register-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: radial-gradient(circle at 50% 50%, #0f2027, #203a43, #2c5364);
+    background-attachment: fixed;
+    background-size: cover;
+    color: #fff;
+    font-family: "Poppins", sans-serif;
+    padding: 20px;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  /* Hiệu ứng ánh sáng neon động */
+  .login-register-page::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at center, rgba(255, 255, 255, 0.1), transparent 70%);
+    animation: moveBackground 6s infinite linear;
+  }
+  
+  @keyframes moveBackground {
+    0% {
+      transform: translate(0, 0) rotate(0deg);
+    }
+    100% {
+      transform: translate(50%, 50%) rotate(360deg);
+    }
+  }
+  
+  /* Tab chuyển đổi giữa Đăng nhập và Đăng ký */
+  .tab-buttons {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .tab-buttons button {
+    background: rgba(255, 255, 255, 0.8);
+    color: #0f2027;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.3);
+  }
+  
+  .tab-buttons button.active {
+    background: linear-gradient(90deg, #ff7eb3, #ff758c, #ff3d54);
+    color: #fff;
+  }
+  
+  .tab-buttons button:hover {
+    transform: scale(1.1);
+  }
+  
+  /* Form tổng quan */
+  form {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    max-width: 400px;
+    animation: fadeIn 0.8s ease-out;
+  }
+  
+  form h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 28px;
+    color: #fff;
+  }
+  
+  form div {
+    margin-bottom: 20px;
+  }
+  
+  form label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #fff;
+  }
+  
+  form input {
+    width: 100%;
+    padding: 12px;
+    border-radius: 10px;
+    border: none;
+    font-size: 16px;
+    color: #333;
+    outline: none;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+  }
+  
+  form input:focus {
+    transform: scale(1.05);
+    box-shadow: 0 5px 20px rgba(255, 255, 255, 0.5);
+  }
+  
+  form button {
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(90deg, #ff7eb3, #ff758c, #ff3d54);
+    color: #fff;
+    border: none;
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.4);
+  }
+  
+  form button:hover {
+    transform: scale(1.05);
+    background: linear-gradient(90deg, #ff3d54, #ff758c, #ff7eb3);
+  }
+  
+  /* Hiệu ứng xuất hiện mượt mà */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Responsive cho màn hình nhỏ */
+  @media (max-width: 480px) {
+    .login-register-page {
+      padding: 15px;
+    }
+  
+    form {
+      padding: 25px;
+    }
+  
+    .tab-buttons button {
+      font-size: 14px;
+      padding: 10px 20px;
+    }
+  }
+  
